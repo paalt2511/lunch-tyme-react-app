@@ -1,0 +1,65 @@
+.lunch-page {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    .list-view {
+        flex: 1;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .map-view {
+        flex: 1;
+    }
+}
+
+@media(max-width: 768px) {
+    .lunch-page {
+        .list-view {
+            display: block;
+        }
+
+        .map-view {
+            display: none;
+        }
+
+        &.selected {
+            .list-view {
+                display: none;
+            }
+
+            .map-view {
+                display: block;
+            }
+        }
+    }
+
+    .iOS {
+        .lunch-page {
+            .map-view {
+                display: block;
+                position: fixed;
+                top: 60px;
+                width: 100%;
+                bottom: 0;
+                right: -100%;
+                z-index: 99;
+                background: #ffffff;
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+                transition: right 500ms ease-in-out;
+            }
+
+            .list-view {
+                display: block;
+            }
+
+            &.selected {
+                .map-view {
+                    right: 0;
+                    transition: right 500ms ease-in-out;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.app {
+  padding: 60px 0 50px;
+  height: 100%;
+  box-sizing: border-box;
+
+  &.iOS {
+    padding-bottom: 0;
+
+    .footer {
+      display: none;
+    }
+  }
+}
